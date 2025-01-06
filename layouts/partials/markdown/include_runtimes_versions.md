@@ -3,7 +3,7 @@
 
 {{- range $runtimeFound := findRE $runtimesPattern $content -}}
     {{- $runtime := replaceRE $runtimesPattern "$1" $runtimeFound -}}
-    {{- $runtime := lower (strings.TrimSpace $runtime) -}}
+    {{- $runtime := lower (strings $runtime) -}}
     {{- $versions := index site.Data.runtime_versions $runtime -}}
     {{- $output := "" -}}
 
